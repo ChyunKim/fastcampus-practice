@@ -6,5 +6,16 @@ export const Container: ComponentSingleStyleConfig = {
   },
   defaultProps: {},
   sizes: {},
-  variants: {},
+  variants: {
+    white: {
+      maxW: '375px',
+      bg: 'white',
+    },
+    orange: {
+      maxW: '375px',
+      bg: 'primary.500',
+      maxH: '812px',
+      h: '100vh',
+    },
+  },
 };
