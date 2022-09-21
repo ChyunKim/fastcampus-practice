@@ -1,52 +1,48 @@
 import { getColorSchema } from '@utils/color-generator';
 
 const Light = {
-  primary: getColorSchema('#FF710B'),
-  secondary: getColorSchema('#FFAB2E'),
+  primary: getColorSchema('#4850FF'),
+  secondary: getColorSchema('#7B61FF'),
   warning: getColorSchema('#FF6060'),
-  waringsub: getColorSchema('#FFE3E6'),
-  success: getColorSchema('#FF710B'),
-  successsub: getColorSchema('#CFE8FF'),
+  success: getColorSchema('#4850FF'),
   gray: {
-    50: '#FDFDFD',
-    100: '#F9F9F9',
+    50: '#FAFAFA',
+    100: '#F7F7F7',
     200: '#F2F3F4',
-    300: '#EAECF0',
-    400: '#CBCED6',
-    500: '#A8ADBA',
+    300: '#E5E7EC',
+    400: '#D1D4DD',
+    500: '#B8BCC8',
     600: '#8C919F',
     700: '#757983',
-    800: '#4A4D55 ',
+    800: '#4A4D55',
     900: '#292A2E',
   },
   black: '#1A1A1A',
   white: '#FFFFFF',
   background: {
     primary: '#FFFFFF',
-    secondary: '#F9F9F9',
-    tertiary: '#F2F3F4',
+    secondary: '#FAFAFA',
+    tertiary: '#F0F0F0',
   },
   modal: '#FFFFFF',
 };
 
 const Dark = {
-  primary: getColorSchema('#FF710B'),
-  secondary: getColorSchema('#FFAB2E'),
+  primary: getColorSchema('#485BFF'),
+  secondary: getColorSchema('#755AFF'),
   warning: getColorSchema('#FF6060'),
-  waringsub: getColorSchema('#FFE3E6'),
-  success: getColorSchema('#FF710B'),
-  successsub: getColorSchema('#CFE8FF'),
+  success: getColorSchema('#4850FF'),
   gray: {
-    50: '#FDFDFD',
-    100: '#F9F9F9',
-    200: '#F2F3F4',
-    300: '#EAECF0',
-    400: '#CBCED6',
-    500: '#A8ADBA',
+    50: '#292A2E',
+    100: '#313236',
+    200: '#39393D',
+    300: '#4A4D55',
+    400: '#5C606A',
+    500: '#757983',
     600: '#8C919F',
-    700: '#757983',
-    800: '#4A4D55 ',
-    900: '#292A2E',
+    700: '#B8BCC8',
+    800: '#D1D4DD',
+    900: '#DFE1E7',
   },
   black: '#E5E7EC',
   white: '#232325',
@@ -86,6 +82,41 @@ const Brand = {
   },
 };
 
+const App = {
+  primary: {
+    500: '#FF710B',
+    100: '#ffe8d7',
+  },
+  secondary: {
+    500: '#FFAB2E',
+    100: '#FFF3E0',
+  },
+  point: '#FFAB2E',
+  pointsub: '#FFFCEF',
+  warning: '#FF6060',
+  warningsub: '#FFE3E6',
+  success: '#FF710B',
+  successsub: '#CFE8FF',
+  gray: {
+    50: '#FDFDFD',
+    100: '#F9F9F9',
+    200: '#F2F3F4',
+    300: '#EAECF0',
+    400: '#CBCED6',
+    500: '#A8ADBA ',
+    600: '#8C919F ',
+    700: '#757983',
+    800: '#4A4D55',
+    900: '#292A2E',
+  },
+  black: '#1A1A1A',
+  white: '#FFFFFF ',
+  background: {
+    primary: '#FFFFFF',
+    secondary: '#F9F9F9',
+    tertiary: '#F2F3F4',
+  },
+};
 const Dim = {
   primary: '#1A1A1A50',
   secondary: '#1A1A1A20',
@@ -102,8 +133,11 @@ const colors = {
   dim: {
     ...Dim,
   },
+  App: {
+    ...App,
+  },
 };
 
-export { mode, Brand, Light, Dark, Dim };
+export { mode, Brand, Light, Dark, Dim, App };
 
 export default colors;
