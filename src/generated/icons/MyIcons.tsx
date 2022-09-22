@@ -1,5 +1,35 @@
 import { Icon, IconProps } from '@chakra-ui/react';
 
+export const CheckIcon = (props: IconProps) => (
+  <Icon viewBox="0 0 24 24" {...props}>
+    <path
+      d="M5.843 11.3302L10.532 17.2472L17.465 7.51025"
+      stroke="currentColor"
+      fill="none"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Icon>
+);
+export const CirclecheckIcon = (props: IconProps) => (
+  <Icon viewBox="0 0 24 24" {...props}>
+    <path
+      d="M23.25 12C23.25 5.7868 18.2132 0.75 12 0.75C5.7868 0.75 0.75 5.7868 0.75 12C0.75 18.2132 5.7868 23.25 12 23.25C18.2132 23.25 23.25 18.2132 23.25 12Z"
+      stroke="currentColor"
+      fill="none"
+      strokeWidth={1.5}
+    />
+    <path
+      d="M6.3894 11.7523L10.7304 15.9652L16.9984 8.61621"
+      stroke="currentColor"
+      fill="none"
+      strokeWidth={2.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Icon>
+);
 export const LogoIcon = (props: IconProps) => (
   <Icon viewBox="0 0 120 16" {...props}>
     <g clipPath="url(#clip0_5113_10270)">
