@@ -1,6 +1,6 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { Box, Button, Heading, Input } from '@chakra-ui/react';
+import { Box, Button, Heading, Input, Select } from '@chakra-ui/react';
 
 import FormCustom from './FormCustom';
 
@@ -11,8 +11,14 @@ interface FormProps {
   nikename: string;
   phone: string;
   email: string;
-  gender?: '여자' | '남자';
-  age?: '10대' | '20대' | '30대' | '40대' | '50대 이상';
+  gender?: {
+    label: '여자' | '남자';
+    value: 'woman' | 'man';
+  };
+  age?: {
+    label: '10대' | '20대' | '30대' | '40대' | '50대이상';
+    value: '10' | '20' | '30' | '40' | '50';
+  };
 }
 
 const Form = () => {
@@ -27,7 +33,7 @@ const Form = () => {
   };
 
   return (
-    <Box as="form" m="50px 0" onSubmit={handleSubmit(onSubmit)}>
+    <Box as="form" p="50px 0" onSubmit={handleSubmit(onSubmit)}>
       <Heading variant="title">회원정보입력</Heading>
       <ProfileIcon w="343px" h="70px" m="40px 0" />
       <FormCustom label="이름" errorText={errors.username?.message}>
@@ -63,6 +69,38 @@ const Form = () => {
           })}
         />
       </FormCustom>
+      <Box p="30px 0">
+        <Heading variant="title">추가정보입력(선택)</Heading>
+        <FormCustom mt="40px" label="성별">
+          <Select
+            {...register('gender')}
+            variant="flushed"
+            placeholder="성별을 선택하세요."
+            borderBottom="2px solid"
+            borderColor="App.gray.400"
+            color="App.gray.400"
+          >
+            <option value="woman">여자</option>
+            <option value="man">남자</option>
+          </Select>
+        </FormCustom>
+        <FormCustom mt="50px" label="연령대">
+          <Select
+            {...register('age')}
+            variant="flushed"
+            placeholder="연령대를 선택하세요."
+            borderBottom="2px solid"
+            borderColor="App.gray.400"
+            color="App.gray.400"
+          >
+            <option value="10">10대</option>
+            <option value="20">20대</option>
+            <option value="30">30대</option>
+            <option value="40">40대</option>
+            <option value="50">50대이상</option>
+          </Select>
+        </FormCustom>
+      </Box>
       <Button variant="orange" type="submit">
         회원가입 완료
       </Button>
