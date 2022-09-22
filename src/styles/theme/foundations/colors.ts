@@ -93,7 +93,7 @@ const App = {
   },
   point: '#FFAB2E',
   pointsub: '#FFFCEF',
-  warning: '#FF6060',
+  warning: '#FF001A',
   warningsub: '#FFE3E6',
   success: '#FF710B',
   successsub: '#CFE8FF',

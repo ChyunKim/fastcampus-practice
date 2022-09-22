@@ -114,8 +114,9 @@ export const variants: InputThemeType['variants'] = {
       border: '1px solid',
       borderRadius: '100px',
       h: '40px',
-      mt: '10px',
-      mb: '50px',
+      _invalid: {
+        borderColor: 'App.warning',
+      },
     },
   },
   unstyled: {
