@@ -63,8 +63,8 @@ const Form = () => {
           })}
         />
       </FormCustom>
-      <Button border="1px solid black" type="submit">
-        확인
+      <Button variant="orange" type="submit">
+        회원가입 완료
       </Button>
     </Box>
   );
