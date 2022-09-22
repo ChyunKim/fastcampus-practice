@@ -1,82 +1,54 @@
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { Controller, UseFormReturn } from 'react-hook-form';
 
-import { Box, Button, Heading, Input, Select } from '@chakra-ui/react';
+import {
+  Box,
+  BoxProps,
+  Button,
+  Heading,
+  Input,
+  Select,
+} from '@chakra-ui/react';
 
+import { FormProps } from '../_hooks/useSignForm';
 import AgreeSignup from './AgreeSignup';
 import FormCustom from './FormCustom';
 
 import { ProfileIcon } from 'generated/icons/MyIcons';
 
-interface FormProps {
-  username: string;
-  nikename: string;
-  phone: string;
-  email: string;
-  gender?: {
-    label: '여자' | '남자';
-    value: 'woman' | 'man';
-  };
-  age?: {
-    label: '10대' | '20대' | '30대' | '40대' | '50대이상';
-    value: '10' | '20' | '30' | '40' | '50';
-  };
+interface FormData extends BoxProps {
+  formData: UseFormReturn<FormProps>;
 }
-
-const Form = () => {
-  const {
+const Form = ({
+  formData: {
     register,
-    handleSubmit,
     formState: { errors },
-  } = useForm<FormProps>();
-
-  const onSubmit: SubmitHandler<FormProps> = (data) => {
-    console.log(data);
-  };
-
+  },
+  onSubmit,
+  ...basicProps
+}: FormData) => {
   return (
-    <Box as="form" p="50px 0" onSubmit={handleSubmit(onSubmit)}>
+    <Box as="form" p="50px 0" onSubmit={onSubmit} {...basicProps}>
       <Box>
         <Heading variant="title">회원정보입력</Heading>
         <ProfileIcon w="343px" h="70px" m="40px 0" />
         <FormCustom label="이름" errorText={errors.username?.message}>
-          <Input
-            variant="formstyled"
-            {...register('username', {
-              required: '최소 2자 이상 입력해주세요.',
-              minLength: 2,
-            })}
-          />
+          <Input variant="formstyled" {...register('username')} />
         </FormCustom>
-        <FormCustom label="닉네임" errorText={errors.nikename?.message}>
-          <Input
-            variant="formstyled"
-            {...register('nikename', {
-              required: '한글 1~5자, 영문 및 숫자 2~10자 사이로 입력해주세요.',
-            })}
-          />
+        <FormCustom label="닉네임" errorText={errors.nickname?.message}>
+          <Input variant="formstyled" {...register('nickname')} />
         </FormCustom>
         <FormCustom label="핸드폰 번호" errorText={errors.phone?.message}>
-          <Input
-            variant="formstyled"
-            {...register('phone', {
-              required: '정확한 핸드폰 번호를 입력해주세요.',
-            })}
-          />
+          <Input variant="formstyled" {...register('phone')} />
         </FormCustom>
         <FormCustom label="이메일 주소" errorText={errors.email?.message}>
-          <Input
-            variant="formstyled"
-            {...register('email', {
-              required: '이메일 주소를 정확하게 입력해주세요.',
-            })}
-          />
+          <Input variant="formstyled" {...register('email')} />
         </FormCustom>
       </Box>
       <Box p="30px 0">
         <Heading variant="title">추가정보입력(선택)</Heading>
+
         <FormCustom mt="40px" label="성별">
           <Select
-            {...register('gender')}
             variant="flushed"
             placeholder="성별을 선택하세요."
             borderBottom="2px solid"
@@ -87,6 +59,7 @@ const Form = () => {
             <option value="man">남자</option>
           </Select>
         </FormCustom>
+
         <FormCustom mt="50px" label="연령대">
           <Select
             {...register('age')}

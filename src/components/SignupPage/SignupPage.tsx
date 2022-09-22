@@ -1,6 +1,6 @@
 import { Box, Container, Heading } from '@chakra-ui/react';
 
-import Form from './_fragments/Form';
+import FormPage from './_fragments/FormPage';
 
 import { LogoIcon } from 'generated/icons/MyIcons';
 
@@ -11,7 +11,7 @@ const SignupPage = () => {
         <LogoIcon w="120" color="App.primary.500" />
       </Box>
       <Heading variant="extraTitle">회원가입</Heading>
-      <Form />
+      <FormPage />
     </Container>
   );
 };
