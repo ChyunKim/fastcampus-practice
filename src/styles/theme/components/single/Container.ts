@@ -13,9 +13,8 @@ export const Container: ComponentSingleStyleConfig = {
     },
     orange: {
       maxW: '375px',
-      bg: 'primary.500',
-      maxH: '812px',
-      h: '100vh',
+      bg: 'App.primary.500',
+      h: '100%',
     },
   },
 };

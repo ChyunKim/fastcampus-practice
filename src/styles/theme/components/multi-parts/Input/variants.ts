@@ -109,6 +109,16 @@ export const variants: InputThemeType['variants'] = {
       },
     };
   },
+  formstyled: {
+    field: {
+      border: '1px solid',
+      borderRadius: '100px',
+      h: '40px',
+      _invalid: {
+        borderColor: 'App.warning',
+      },
+    },
+  },
   unstyled: {
     field: {
       bg: 'transparent',
